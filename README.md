@@ -1,4 +1,4 @@
-Readmy of SpaceTeddy/CC1101.
+Readme of SpaceTeddy/CC1101.
 
 CC1101
 ======
