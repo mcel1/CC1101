@@ -5,6 +5,10 @@ driver library for Ti CC1100 / CC1101.<br />
 Contains Lib for Arduino and Raspberry Pi.<br />
 Note: Raspi need wiringPi<br />
 
+a compatible and tested library for TI MSP430 is provided by abhra0897. <br />
+https://github.com/abhra0897/msp430_cc1101_energia_v2 <br />
+
+
 Donation
 ========
 
@@ -102,8 +106,8 @@ you can set a frequency operation band by **void CC1100::set_ISM(uint8_t ism_fre
 Arduino specific
 ================
 
-CC1101 RF settings must be stored in the Arduino EEPROM to have maximum flexibility with different mode settings and reduced memomy usage.
-Follow the following steps, how to store the compiled EEPROM file (*.eep) to your Arduino EEPROM. From my experience, you have to repeat this step only, if you have changed the Arduino Version. 
+CC1101 RF settings must be stored in the Arduino EEPROM to have maximum flexibility with different mode settings and reduced memory usage.
+Follow the following steps, how to store the compiled EEPROM file (*.eep) to your Arduino EEPROM. From my experience, you have to repeat this step only, if you have changed the Arduino Version, because the gcc compiler defines the location of the eeprom settings.
 
 - compile the tx_demo or rx_demo example sketch
 - remember the path of your compiled output data (Arduino *.hex file and *.eep file)
@@ -121,13 +125,13 @@ Follow the following steps, how to store the compiled EEPROM file (*.eep) to you
 - if your EEPROM data is written correct, you can compile and upload the RX_Demo or TX_Demo sketch to that hardware
 
 
-Rapsberry Pi
+Raspberry Pi
 ============
 
 How to compile Raspi Demo files
 -------------------------------
 
-be sure first, that you have already wireingPi installed on your Raspberry Pi hardware. 
+be sure first, that you have already wiringPi installed on your Raspberry Pi hardware. 
 
 copy RX_Demo.cpp, TX_Demo.cpp, cc1100_raspi.cpp, cc1100_raspi.h in the same directory and compile: <br />
 
@@ -160,7 +164,7 @@ CC1100 SW [-h] [-V] [-a My_Addr] [-r RxDemo_Addr] [-i Msg_Interval] [-t tx_retri
   -t tx_retries [0-255] 	  	sets message send retries
   -c channel    [1-255] 		set transmit channel
   -f frequency  [315,434,868,915]  	set ISM band
-  -m modulation [100,250,500]           set modulation
+  -m modulation [1,38,100,250,500,4]	set modulation
   ```
   
   Example,<br />
@@ -177,7 +181,7 @@ CC1100 SW [-h] [-V] [-a My_Addr] [-r RxDemo_Addr] [-i Msg_Interval] [-t tx_retri
   -a my address [1-255] 		set my address
   -c channel    [1-255] 		set transmit channel
   -f frequency  [315,434,868,915]  	set ISM band
-  -m modulation [100,250,500]           set modulation
+  -m modulation [1,38,100,250,500,4]	set modulation
   ```
   
   Example,<br />
